@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://cmj5ucvmhlsmm"]
+
+[ext_resource type="PackedScene" uid="uid://cih03pafw0tyh" path="res://Player/character_body_2d.tscn" id="1_wxyr7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3gd2q"]
+size = Vector2(2237.12, 529)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0phh3"]
+size = Vector2(338, 970)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nq4j3"]
+size = Vector2(600, 1336)
+
+[node name="world" type="Node2D"]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_wxyr7")]
+position = Vector2(704, 176)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(896, 1120)
+shape = SubResource("RectangleShape2D_3gd2q")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-40, 440)
+shape = SubResource("RectangleShape2D_0phh3")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2116, 508)
+shape = SubResource("RectangleShape2D_nq4j3")
+
+[node name="Panel" type="Panel" parent="StaticBody2D"]
+offset_left = -8.0
+offset_top = 856.0
+offset_right = 1912.0
+offset_bottom = 1504.0

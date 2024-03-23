@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cmj5ucvmhlsmm"]
+[gd_scene load_steps=11 format=3 uid="uid://cv3pqexf4ekvi"]
 
 [ext_resource type="Texture2D" uid="uid://drtonxannt5re" path="res://map_v2.png" id="1_p7pbr"]
 [ext_resource type="PackedScene" uid="uid://cih03pafw0tyh" path="res://Player/character_body_2d.tscn" id="1_wxyr7"]
@@ -6,6 +6,8 @@
 [sub_resource type="GDScript" id="GDScript_1smhk"]
 
 [sub_resource type="GDScript" id="GDScript_gymx4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_16352"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qc450"]
 size = Vector2(429.5, 10)
@@ -26,7 +28,7 @@ size = Vector2(73, 170)
 script = SubResource("GDScript_1smhk")
 
 [node name="MapV2" type="Sprite2D" parent="."]
-position = Vector2(866, 482)
+position = Vector2(958, 501)
 scale = Vector2(3.63186, 3.63186)
 texture = ExtResource("1_p7pbr")
 
@@ -35,6 +37,20 @@ position = Vector2(960, 500)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 script = SubResource("GDScript_gymx4")
+
+[node name="Node2D" type="Node2D" parent="CharacterBody2D"]
+rotation = -0.0785398
+
+[node name="Marker2D" type="Marker2D" parent="CharacterBody2D/Node2D"]
+position = Vector2(34, -1)
+scale = Vector2(1.5, 1.5)
+gizmo_extents = 12.5
+
+[node name="Area2D" type="Area2D" parent="CharacterBody2D"]
+
+[node name="ColidePlayer" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
+position = Vector2(2, -1)
+shape = SubResource("RectangleShape2D_16352")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

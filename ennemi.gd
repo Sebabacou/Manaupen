@@ -6,11 +6,10 @@ const speed = 90
 @export var player: Node2D
 
 @onready var nav : NavigationAgent2D
+@onready var anim = get_node("AnimatedSprite2D")
 
 func _physics_process(_delta : float) -> void:
-	var test = nav.get_current_navigation_path()
-	print(test)
-	var velo = nav.get_next_path_position() - global_position
+	var velo = player.global_position - global_position
 	velo = velo.normalized()
 	velocity = velo * speed
 	move_and_slide()
@@ -28,6 +27,7 @@ func _on_ready():
 	nav.path_desired_distance = 30.0
 	nav.target_desired_distance = 20.0
 	call_deferred("actor_setup")
+	anim.play("default")
 	
 func actor_setup():
 	await get_tree().physics_frame

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ch431hh2h2cy2"]
 
-[ext_resource type="Script" path="res://Bullet.gd" id="1_i27w1"]
-[ext_resource type="Texture2D" uid="uid://dk0dn1kpr32re" path="res://img/Laser Sprites/19.png" id="1_kbdd4"]
+[ext_resource type="Script" path="res://shoot/Bullet.gd" id="1_6t10p"]
+[ext_resource type="Texture2D" uid="uid://dk0dn1kpr32re" path="res://img/Laser Sprites/19.png" id="2_uvm4a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fopgm"]
 size = Vector2(37, 6)
@@ -10,12 +10,12 @@ size = Vector2(37, 6)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 slide_on_ceiling = false
-script = ExtResource("1_i27w1")
+script = ExtResource("1_6t10p")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 position = Vector2(0, -1.78814e-07)
 scale = Vector2(0.247967, 0.21831)
-texture = ExtResource("1_kbdd4")
+texture = ExtResource("2_uvm4a")
 
 [node name="Area2D" type="Area2D" parent="CharacterBody2D"]
 

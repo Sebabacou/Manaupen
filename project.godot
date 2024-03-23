@@ -13,7 +13,6 @@ config_version=5
 config/name="Learn_use_godot"
 run/main_scene="res://world.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://Player/icon.svg"
 
 [display]
 
@@ -23,9 +22,11 @@ window/size/viewport_height=1080
 [file_customization]
 
 folder_colors={
+"res://ennemi/": "red",
 "res://interaction/": "purple",
 "res://interaction/interaction folder/": "purple",
-"res://map/": "orange"
+"res://map/": "orange",
+"res://player/": "blue"
 }
 
 [input]
@@ -56,6 +57,7 @@ move_left={
 2d_physics/layer_1="world"
 2d_physics/layer_2="wall"
 2d_physics/layer_3="player"
+2d_physics/layer_4="Enemies"
 
 [physics]
 

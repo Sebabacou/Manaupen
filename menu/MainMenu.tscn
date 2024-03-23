@@ -295,7 +295,7 @@ sources/5 = SubResource("TileSetAtlasSource_iu136")
 sources/6 = SubResource("TileSetAtlasSource_6trp2")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_77hx1"]
-size = Vector2(39, 7)
+size = Vector2(39, 8.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pr3pu"]
 size = Vector2(32, 8)
@@ -342,10 +342,12 @@ polygon = PackedVector2Array(-163, -128, -127, -129, -133, -150, -93, -150, -96,
 polygon = PackedVector2Array(-27, -127, -26, -94, -6, -93, -2, -111, 37, -111, 40, -94, 59, -94, 59, -128)
 
 [node name="StartDoor" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 4
 script = ExtResource("9_bd2vw")
 
 [node name="StartBox" type="CollisionShape2D" parent="StartDoor"]
-position = Vector2(142.5, -147.5)
+position = Vector2(143, -150)
 shape = SubResource("RectangleShape2D_77hx1")
 
 [node name="ExitDoor" type="Area2D" parent="."]
@@ -364,4 +366,5 @@ script = ExtResource("11_8ghdp")
 position = Vector2(17, -109)
 shape = SubResource("RectangleShape2D_s13kk")
 
+[connection signal="body_entered" from="StartDoor" to="StartDoor" method="_on_body_entered"]
 [connection signal="body_entered" from="ExitDoor" to="ExitDoor" method="_on_body_entered"]

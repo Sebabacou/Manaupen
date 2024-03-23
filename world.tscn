@@ -17,3 +17,7 @@ position = Vector2(848, 64)
 collision_mask = 6
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+limit_left = -2566
+limit_top = -2339
+limit_right = 4766
+limit_bottom = 2300

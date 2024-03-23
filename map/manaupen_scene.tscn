@@ -21,6 +21,7 @@ metadata/_edit_group_ = true
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(1120, -245)
+rotation = 0.0104072
 scale = Vector2(5.76, 4.56742)
 texture = ExtResource("1_mftvw")
 

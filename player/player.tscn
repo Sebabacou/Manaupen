@@ -1,0 +1,70 @@
+[gd_scene load_steps=10 format=3 uid="uid://dlgaubofwx2f6"]
+
+[ext_resource type="Script" path="res://player/player.gd" id="1_5batg"]
+[ext_resource type="Texture2D" uid="uid://jtjtwdcqybdu" path="res://player/Robot Warfare Asset Pack 22-11-24/Soldiers/Assault-Class.png" id="2_apjxy"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8qfhc"]
+radius = 40.0
+height = 80.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hm5qv"]
+atlas = ExtResource("2_apjxy")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4jvx6"]
+atlas = ExtResource("2_apjxy")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_610p6"]
+atlas = ExtResource("2_apjxy")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q034o"]
+atlas = ExtResource("2_apjxy")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y021c"]
+atlas = ExtResource("2_apjxy")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rttob"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hm5qv")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4jvx6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_610p6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q034o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y021c")
+}],
+"loop": true,
+"name": &"run",
+"speed": 15.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_5batg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_8qfhc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-4.76837e-07, -4.76837e-07)
+scale = Vector2(7.51562, 7.51562)
+sprite_frames = SubResource("SpriteFrames_rttob")
+animation = &"idle"

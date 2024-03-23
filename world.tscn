@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmj5ucvmhlsmm"]
+
+[ext_resource type="PackedScene" uid="uid://dlgaubofwx2f6" path="res://player/player.tscn" id="2_glehg"]
+[ext_resource type="PackedScene" uid="uid://bjas4r5548ewi" path="res://map/manaupen_scene.tscn" id="2_pnj7u"]
+
+[sub_resource type="GDScript" id="GDScript_1smhk"]
+
+[node name="world" type="Node2D"]
+script = SubResource("GDScript_1smhk")
+metadata/_edit_horizontal_guides_ = [-1288.0]
+
+[node name="Manaupen_scene" parent="." instance=ExtResource("2_pnj7u")]
+position = Vector2(-8, 228)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_glehg")]
+position = Vector2(848, 64)
+collision_mask = 6
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]

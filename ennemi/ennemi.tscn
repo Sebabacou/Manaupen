@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=3 uid="uid://c32f4k3hgfypv"]
 
-[ext_resource type="Texture2D" uid="uid://domwagn0nq5uu" path="res://pngwing.com.png" id="1_636tp"]
-[ext_resource type="Script" path="res://ennemi.gd" id="1_cwsr7"]
+[ext_resource type="Texture2D" uid="uid://domwagn0nq5uu" path="res://ennemi/pngwing.com.png" id="1_636tp"]
+[ext_resource type="Script" path="res://ennemi/ennemi.gd" id="1_cwsr7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_emf42"]
 atlas = ExtResource("1_636tp")
@@ -103,7 +103,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3xv6h"]
-size = Vector2(133, 120)
+size = Vector2(96, 75)
 
 [node name="Ennemy" type="CharacterBody2D"]
 script = ExtResource("1_cwsr7")
@@ -115,7 +115,7 @@ frame_progress = 0.204573
 offset = Vector2(25, -30)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(9.5, -23)
+position = Vector2(4, -0.5)
 shape = SubResource("RectangleShape2D_3xv6h")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]

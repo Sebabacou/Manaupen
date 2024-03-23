@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://jtjtwdcqybdu" path="res://player/Robot Warfare Asset Pack 22-11-24/Soldiers/Assault-Class.png" id="2_apjxy"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8qfhc"]
-radius = 40.0
-height = 80.0
+radius = 29.0
+height = 74.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hm5qv"]
 atlas = ExtResource("2_apjxy")
@@ -67,5 +67,12 @@ shape = SubResource("CapsuleShape2D_8qfhc")
 position = Vector2(-4.76837e-07, -4.76837e-07)
 scale = Vector2(7.51562, 7.51562)
 sprite_frames = SubResource("SpriteFrames_rttob")
-animation = &"run"
-frame_progress = 0.793921
+animation = &"idle"
+
+[node name="Node2D" type="Node2D" parent="."]
+rotation = 3.84845
+
+[node name="Marker2D" type="Marker2D" parent="Node2D"]
+position = Vector2(150, 0)
+scale = Vector2(1.5, 1.5)
+gizmo_extents = 45.7

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cih03pafw0tyh"]
 
 [ext_resource type="Script" path="res://Player/character_body_2d.gd" id="1_ro33r"]
-[ext_resource type="Texture2D" uid="uid://d1pq3ux688fo2" path="res://icon.svg" id="2_8d5vy"]
+[ext_resource type="Texture2D" uid="uid://d1pq3ux688fo2" path="res://Player/icon.svg" id="2_edmcx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bkxat"]
 size = Vector2(29, 29)
@@ -10,7 +10,7 @@ size = Vector2(29, 29)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_8d5vy")
+"texture": ExtResource("2_edmcx")
 }],
 "loop": true,
 "name": &"idle",
@@ -18,7 +18,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_8d5vy")
+"texture": ExtResource("2_edmcx")
 }],
 "loop": true,
 "name": &"jump",
@@ -26,7 +26,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_8d5vy")
+"texture": ExtResource("2_edmcx")
 }],
 "loop": true,
 "name": &"run",
@@ -34,7 +34,11 @@ animations = [{
 }]
 
 [node name="player" type="CharacterBody2D"]
+position = Vector2(38, 42)
+collision_layer = 4
+collision_mask = 2
 script = ExtResource("1_ro33r")
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_bkxat")

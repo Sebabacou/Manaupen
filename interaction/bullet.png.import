@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7x7wofue6q1s"
-path="res://.godot/imported/big-explosion.png-84ff9acca2075a579ba8c09235e0ec69.ctex"
+uid="uid://bd6owov32j8dk"
+path="res://.godot/imported/bullet.png-d7e856a9782ddad608680da69d04129e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/Robot Warfare Asset Pack 22-11-24/Effects/big-explosion.png"
-dest_files=["res://.godot/imported/big-explosion.png-84ff9acca2075a579ba8c09235e0ec69.ctex"]
+source_file="res://interaction/bullet.png"
+dest_files=["res://.godot/imported/bullet.png-d7e856a9782ddad608680da69d04129e.ctex"]
 
 [params]
 

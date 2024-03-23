@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drtonxannt5re"
-path="res://.godot/imported/map_v2.png-dab505916631c954d58e964d5c21ee81.ctex"
+uid="uid://30ejte1ncdrg"
+path="res://.godot/imported/overhead-health-bars.png-556c8c76b63b352a74039ac2f151c014.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://map_v2.png"
-dest_files=["res://.godot/imported/map_v2.png-dab505916631c954d58e964d5c21ee81.ctex"]
+source_file="res://player/Robot Warfare Asset Pack 22-11-24/UI/overhead-health-bars.png"
+dest_files=["res://.godot/imported/overhead-health-bars.png-556c8c76b63b352a74039ac2f151c014.ctex"]
 
 [params]
 

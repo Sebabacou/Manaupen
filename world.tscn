@@ -1,35 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://cmj5ucvmhlsmm"]
+[gd_scene load_steps=3 format=3 uid="uid://cmj5ucvmhlsmm"]
 
-[ext_resource type="PackedScene" uid="uid://cih03pafw0tyh" path="res://Player/character_body_2d.tscn" id="1_wxyr7"]
-[ext_resource type="PackedScene" uid="uid://bjas4r5548ewi" path="res://map/manaupen_scene.tscn" id="3_apr6d"]
-[ext_resource type="PackedScene" uid="uid://dlnji853x1g6h" path="res://interaction/ball.tscn" id="3_obljx"]
+[ext_resource type="PackedScene" uid="uid://dlgaubofwx2f6" path="res://player/player.tscn" id="2_glehg"]
 
 [sub_resource type="GDScript" id="GDScript_1smhk"]
 
-[sub_resource type="GDScript" id="GDScript_gymx4"]
-
-[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_1aaiw"]
-scenes/1/scene = ExtResource("3_obljx")
-
-[sub_resource type="TileSet" id="TileSet_bousr"]
-sources/0 = SubResource("TileSetScenesCollectionSource_1aaiw")
-
 [node name="world" type="Node2D"]
-position = Vector2(635, 473)
 script = SubResource("GDScript_1smhk")
+metadata/_edit_horizontal_guides_ = [-1288.0]
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("1_wxyr7")]
-position = Vector2(960, 500)
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_glehg")]
+position = Vector2(848, 64)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-script = SubResource("GDScript_gymx4")
-
-[node name="Balls" type="TileMap" parent="."]
-tile_set = SubResource("TileSet_bousr")
-format = 2
-layer_0/name = "balls"
-layer_0/tile_data = PackedInt32Array(2424867, 0, 65536, 1245262, 0, 65536, 1376266, 0, 65536, 262183, 0, 65536, 524388, 0, 65536, 3604572, 0, 65536, 4587542, 0, 65536, 5242985, 0, 65536)
-
-[node name="Manaupen_scene" parent="." instance=ExtResource("3_apr6d")]
-show_behind_parent = true
-position = Vector2(-85, 487)

@@ -8,18 +8,18 @@ const run = 610
 const BulletPath = preload("res://interaction/ball.tscn")
 
 var shoot_timer = 0.0
-var shoot_delay = 0.1 
+var shoot_delay = 0.1
 
 func _physics_process(delta):
 	var direction_right_left = Input.get_axis("move_left", "move_right")
-	var direction_down_up = Input.get_axis("move_up", "move_down")	
+	var direction_down_up = Input.get_axis("move_up", "move_down")
 	shoot_timer += delta
 
 	if Input.get_axis("move_right", "move_left"):
 		velocity.x = direction_right_left * SPEED
-		animation.scale.x = 7.516
+		animation.scale.x = 2
 		if Input.is_action_pressed("move_left"):
-			animation.scale.x = -7.516
+			animation.scale.x = -2
 	else:
 		animation.scale.x *= 1
 		velocity.x = move_toward(velocity.x, 0, 30)
@@ -46,7 +46,7 @@ func _physics_process(delta):
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and shoot_timer > shoot_delay:
 		shoot()
 		shoot_timer = 0
-	
+
 	move_and_slide()
 
 func shoot():

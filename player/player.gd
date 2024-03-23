@@ -13,9 +13,9 @@ func _physics_process(delta):
 
 	if Input.get_axis("ui_right", "ui_left"):
 		velocity.x = direction_right_left * SPEED
-		animation.scale.x = 7.516
+		animation.scale.x = 2
 		if Input.is_action_pressed("ui_left"):
-			animation.scale.x = -7.516
+			animation.scale.x = -2
 		#animation.play("run")
 	else:
 		animation.scale.x *= 1

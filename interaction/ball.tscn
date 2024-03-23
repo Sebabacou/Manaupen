@@ -6,17 +6,17 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_pb1g5"]
 radius = 49.0408
 
-[node name="ball" type="RigidBody2D"]
-collision_layer = 4
+[node name="ball" type="CharacterBody2D"]
+position = Vector2(0, -1)
+collision_layer = 16
 collision_mask = 2
 script = ExtResource("1_o1e1t")
-metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(110, 117)
+position = Vector2(199, 205)
 scale = Vector2(0.084961, 0.0849609)
 texture = ExtResource("1_ocu3c")
+offset = Vector2(-2325, -2400)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(110, 117)
 shape = SubResource("CircleShape2D_pb1g5")

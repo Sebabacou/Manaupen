@@ -2502,6 +2502,31 @@ position = Vector2(848, 64)
 collision_mask = 6
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+limit_left = -2566
+limit_top = -2339
+limit_right = 4766
+limit_bottom = 2300
+position_smoothing_enabled = true
+position_smoothing_speed = 1.0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CharacterBody2D/Camera2D"]
+offset_left = -46.0
+offset_top = -63.0
+offset_right = 50.0
+offset_bottom = -23.0
+value = 50.0
+texture_under = ExtResource("3_a88li")
+texture_progress = ExtResource("4_vwy8d")
+
+[node name="Ennemy2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_38ntu")]
+position = Vector2(364, 394)
+collision_layer = 8
+collision_mask = 10
+player = NodePath("../CharacterBody2D")
+
+[node name="Ennemy" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_38ntu")]
+position = Vector2(1269, 71)
+player = NodePath("../CharacterBody2D")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_xrdyy")

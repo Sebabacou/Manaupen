@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cmj5ucvmhlsmm"]
+[gd_scene load_steps=11 format=3 uid="uid://cmj5ucvmhlsmm"]
 
 [ext_resource type="Texture2D" uid="uid://drtonxannt5re" path="res://map/map_v2.png" id="1_p7pbr"]
 [ext_resource type="PackedScene" uid="uid://dlgaubofwx2f6" path="res://player/player.tscn" id="2_glehg"]
@@ -20,8 +20,15 @@ radius = 81.5843
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vpb8v"]
 size = Vector2(73, 170)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rjvc4"]
+size = Vector2(1046.03, 3416)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lps2k"]
+size = Vector2(4565, 786)
+
 [node name="world" type="Node2D"]
 script = SubResource("GDScript_1smhk")
+metadata/_edit_horizontal_guides_ = [-1288.0]
 
 [node name="MapV2" type="Sprite2D" parent="."]
 position = Vector2(866, 482)
@@ -34,7 +41,6 @@ position = Vector2(848, 64)
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(1198.75, 1267)
@@ -71,3 +77,21 @@ shape = SubResource("RectangleShape2D_vpb8v")
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(1160, 1168)
 shape = SubResource("RectangleShape2D_ra55a")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1373.56, 564)
+scale = Vector2(0.989575, 1.03587)
+shape = SubResource("RectangleShape2D_rjvc4")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D/CollisionShape2D10"]
+position = Vector2(4435.8, -189.212)
+scale = Vector2(0.989575, 1.03587)
+shape = SubResource("RectangleShape2D_rjvc4")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(813.5, -1288)
+shape = SubResource("RectangleShape2D_lps2k")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="StaticBody2D/CollisionShape2D11"]
+position = Vector2(98.5, 3568)
+shape = SubResource("RectangleShape2D_lps2k")

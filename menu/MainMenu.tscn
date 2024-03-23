@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://xp0xq82lak0q"]
+[gd_scene load_steps=26 format=3 uid="uid://xp0xq82lak0q"]
 
 [ext_resource type="Texture2D" uid="uid://416qrfnn8ck7" path="res://Assets/Map/zelda_futuristic_asset_pack/map/tileset.png" id="2_f2pel"]
 [ext_resource type="PackedScene" uid="uid://dlgaubofwx2f6" path="res://player/player.tscn" id="2_xvqho"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://menu/ExitDoor.gd" id="10_pu83f"]
 [ext_resource type="FontFile" uid="uid://de33bafuqfbcr" path="res://Assets/TextFont/m3x6.ttf" id="10_ux386"]
 [ext_resource type="Script" path="res://menu/OptionPannel.gd" id="11_8ghdp"]
+[ext_resource type="AudioStream" uid="uid://b6sjseluvwl1x" path="res://Assets/Musics/Ambient/[NO COPYRIGHT]Ambient-SciFi.mp3" id="13_u0kga"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6an7p"]
 texture = ExtResource("2_f2pel")
@@ -331,7 +332,7 @@ layer_1/z_index = -1
 layer_1/tile_data = PackedInt32Array(-262150, 0, 3, -262149, 65536, 3, -262148, 393216, 4, -262147, 65536, 3, -262146, 65536, 3, -262145, 65536, 3, -327680, 65536, 3, -327679, 65536, 3, -327678, 65536, 3, -327677, 65536, 3, -327676, 393216, 4, -196614, 0, 4, -131078, 0, 4, -65542, 0, 4, -6, 0, 4, 65530, 0, 4, 131066, 0, 4, 196602, 0, 4, 262138, 0, 4, 327674, 0, 4, 393210, 0, 5, 393211, 65536, 5, 393212, 65536, 5, 393213, 65536, 5, 393214, 65536, 5, 393215, 65536, 5, 327680, 65536, 5, 327681, 65536, 5, 327682, 65536, 5, 327683, 65536, 5, 327684, 65536, 5, 65542, 131072, 4, 6, 131072, 4, 131078, 131072, 4, 196614, 131072, 4, 262150, 131072, 4, -262138, 131072, 4, -196602, 131072, 4, -131066, 131072, 4, -65530, 131072, 4, 327686, 131072, 5, 327685, 65536, 5, -327674, 131072, 3, -327675, 65536, 3)
 layer_2/name = "elements"
 layer_2/z_index = -1
-layer_2/tile_data = PackedInt32Array(-262149, 1, 0, -262148, 65537, 0, -262147, 131073, 0, -327677, 1, 0, -327676, 65537, 0, -262145, 131073, 7, -262146, 65537, 7, -65542, 458753, 6, -6, 458753, 6, 65530, 458753, 6, 131066, 458753, 6, 393215, 131073, 7, 327680, 131073, 7, 393214, 131073, 7, 393213, 65537, 7, 327681, 196609, 7, -262143, 2, 0, -262144, 3, 0, -327675, 131073, 0, -327680, 131073, 7, -327679, 131073, 7, -327678, 196609, 7, -196609, 2, 0, 196602, 458753, 6, -131066, 458753, 6, -65530, 458753, 6, 6, 458753, 6, 65542, 458753, 6, 131078, 458753, 6, -131078, 458753, 5, -196602, 458753, 5, 262138, 458753, 7, 196614, 458753, 7)
+layer_2/tile_data = PackedInt32Array(-262149, 1, 0, -262148, 65537, 0, -262147, 131073, 0, -327677, 1, 0, -327676, 65537, 0, -262145, 131073, 7, -262146, 65537, 7, -65542, 458753, 6, -6, 458753, 6, 65530, 458753, 6, 131066, 458753, 6, 393215, 131073, 7, 327680, 131073, 7, 393214, 131073, 7, 393213, 65537, 7, 327681, 131073, 7, -262143, 2, 0, -262144, 3, 0, -327675, 131073, 0, -327680, 131073, 7, -327679, 131073, 7, -327678, 196609, 7, -196609, 2, 0, 196602, 458753, 6, -131066, 458753, 6, -65530, 458753, 6, 6, 458753, 6, 65542, 458753, 6, 131078, 458753, 6, -131078, 458753, 5, -196602, 458753, 5, 262138, 458753, 7, 196614, 458753, 7, 327683, 196609, 7, 327682, 131073, 7)
 layer_3/name = "doors"
 layer_3/tile_data = PackedInt32Array(-327677, 1, 0, -327675, 131073, 0, -327676, 65537, 0, -262148, 65537, 0, -262149, 1, 0, -262147, 131073, 0)
 
@@ -354,7 +355,7 @@ script = ExtResource("9_bd2vw")
 position = Vector2(143, -150)
 shape = SubResource("RectangleShape2D_77hx1")
 
-[node name="Label" type="Label" parent="Map/StartDoor/StartBox"]
+[node name="StartText" type="Label" parent="Map/StartDoor/StartBox"]
 offset_left = -18.0
 offset_right = 18.0
 offset_bottom = 14.0
@@ -373,7 +374,7 @@ script = ExtResource("10_pu83f")
 position = Vector2(-114, -150)
 shape = SubResource("RectangleShape2D_pr3pu")
 
-[node name="Label" type="Label" parent="Map/ExitDoor/ExitBox"]
+[node name="ExitText" type="Label" parent="Map/ExitDoor/ExitBox"]
 offset_left = -17.0
 offset_right = 19.0
 offset_bottom = 14.0
@@ -388,6 +389,26 @@ script = ExtResource("11_8ghdp")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Map/OptionPannel"]
 position = Vector2(17, -109)
 shape = SubResource("RectangleShape2D_s13kk")
+
+[node name="WelcomeText" type="Label" parent="Map"]
+z_index = -1
+offset_left = -95.0
+offset_top = -59.0
+offset_right = 134.0
+offset_bottom = 122.0
+theme_override_colors/font_color = Color(0.698039, 0.698039, 0.698039, 0.592157)
+theme_override_fonts/font = ExtResource("10_ux386")
+theme_override_font_sizes/font_size = 64
+text = "WELCOME
+TO
+MANAUPEN"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_u0kga")
+autoplay = true
 
 [connection signal="body_entered" from="Map/StartDoor" to="Map/StartDoor" method="_on_body_entered"]
 [connection signal="body_entered" from="Map/ExitDoor" to="Map/ExitDoor" method="_on_body_entered"]

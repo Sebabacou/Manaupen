@@ -18,6 +18,7 @@ size = Vector2(171, 4891)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(1120, -245)
+rotation = 0.0104072
 scale = Vector2(5.76, 4.56742)
 texture = ExtResource("1_mftvw")
 

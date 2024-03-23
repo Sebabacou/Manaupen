@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cmj5ucvmhlsmm"]
+[gd_scene load_steps=5 format=3 uid="uid://cmj5ucvmhlsmm"]
 
 [ext_resource type="PackedScene" uid="uid://dlgaubofwx2f6" path="res://player/player.tscn" id="2_glehg"]
 [ext_resource type="PackedScene" uid="uid://bjas4r5548ewi" path="res://map/manaupen_scene.tscn" id="2_pnj7u"]
+[ext_resource type="PackedScene" uid="uid://c32f4k3hgfypv" path="res://ennemi/ennemi.tscn" id="3_38ntu"]
 
 [sub_resource type="GDScript" id="GDScript_1smhk"]
 
@@ -17,3 +18,17 @@ position = Vector2(848, 64)
 collision_mask = 6
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+limit_left = -2566
+limit_top = -2339
+limit_right = 4766
+limit_bottom = 2300
+
+[node name="Ennemy2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_38ntu")]
+position = Vector2(364, 394)
+collision_layer = 8
+collision_mask = 10
+player = NodePath("../CharacterBody2D")
+
+[node name="Ennemy" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_38ntu")]
+position = Vector2(1269, 71)
+player = NodePath("../CharacterBody2D")

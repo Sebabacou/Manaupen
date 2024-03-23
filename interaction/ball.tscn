@@ -8,7 +8,7 @@ radius = 49.0408
 
 [node name="ball" type="RigidBody2D"]
 collision_layer = 4
-collision_mask = 6
+collision_mask = 2
 script = ExtResource("1_o1e1t")
 metadata/_edit_group_ = true
 

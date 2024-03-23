@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://domwagn0nq5uu"
-path="res://.godot/imported/pngwing.com.png-84ac95d3c82df5c3f85812be8dcfd7c3.ctex"
+uid="uid://br2or78kyu8e0"
+path="res://.godot/imported/obstacles-and-objects.png-bb3e5fe8edd792ef5feee8ddb5e5dec6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ennemi/pngwing.com.png"
-dest_files=["res://.godot/imported/pngwing.com.png-5dca6806a21e2bcaf42fb15e97f38045.ctex"]
+source_file="res://map/obstacles-and-objects.png"
+dest_files=["res://.godot/imported/obstacles-and-objects.png-bb3e5fe8edd792ef5feee8ddb5e5dec6.ctex"]
 
 [params]
 

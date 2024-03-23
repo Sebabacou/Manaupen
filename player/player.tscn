@@ -37,6 +37,11 @@ animations = [{
 "name": &"idle",
 "speed": 5.0
 }, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4jvx6")
@@ -65,7 +70,16 @@ script = ExtResource("1_5batg")
 shape = SubResource("CapsuleShape2D_8qfhc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
 position = Vector2(-4.76837e-07, -4.76837e-07)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_rttob")
 animation = &"idle"
+
+[node name="Node2D" type="Node2D" parent="."]
+rotation = 3.84845
+
+[node name="Marker2D" type="Marker2D" parent="Node2D"]
+position = Vector2(150, 0)
+scale = Vector2(1.5, 1.5)
+gizmo_extents = 45.7

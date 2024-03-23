@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://domwagn0nq5uu"
-path="res://.godot/imported/pngwing.com.png-84ac95d3c82df5c3f85812be8dcfd7c3.ctex"
+uid="uid://e6v6xi7n033c"
+path="res://.godot/imported/life_bar_empty.png-ec2f53b93351549aeca669f48a6da462.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pngwing.com.png"
-dest_files=["res://.godot/imported/pngwing.com.png-84ac95d3c82df5c3f85812be8dcfd7c3.ctex"]
+source_file="res://player/hand-drawn-video-game-element/life_bar_empty.png"
+dest_files=["res://.godot/imported/life_bar_empty.png-ec2f53b93351549aeca669f48a6da462.ctex"]
 
 [params]
 

@@ -1,7 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cmj5ucvmhlsmm"]
+[gd_scene load_steps=7 format=3 uid="uid://cmj5ucvmhlsmm"]
 
 [ext_resource type="PackedScene" uid="uid://dlgaubofwx2f6" path="res://player/player.tscn" id="2_glehg"]
 [ext_resource type="PackedScene" uid="uid://bjas4r5548ewi" path="res://map/manaupen_scene.tscn" id="2_pnj7u"]
+[ext_resource type="PackedScene" uid="uid://c32f4k3hgfypv" path="res://ennemi/ennemi.tscn" id="3_38ntu"]
+[ext_resource type="Texture2D" uid="uid://e6v6xi7n033c" path="res://player/hand-drawn-video-game-element/life_bar_empty.png" id="3_a88li"]
+[ext_resource type="Texture2D" uid="uid://bi4br1iuaj7g8" path="res://player/hand-drawn-video-game-element/life_bar_filled.png" id="4_vwy8d"]
 
 [sub_resource type="GDScript" id="GDScript_1smhk"]
 
@@ -21,3 +24,24 @@ limit_left = -2566
 limit_top = -2339
 limit_right = 4766
 limit_bottom = 2300
+position_smoothing_enabled = true
+position_smoothing_speed = 1.0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CharacterBody2D/Camera2D"]
+offset_left = -46.0
+offset_top = -63.0
+offset_right = 50.0
+offset_bottom = -23.0
+value = 50.0
+texture_under = ExtResource("3_a88li")
+texture_progress = ExtResource("4_vwy8d")
+
+[node name="Ennemy2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_38ntu")]
+position = Vector2(364, 394)
+collision_layer = 8
+collision_mask = 10
+player = NodePath("../CharacterBody2D")
+
+[node name="Ennemy" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_38ntu")]
+position = Vector2(1269, 71)
+player = NodePath("../CharacterBody2D")

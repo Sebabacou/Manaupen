@@ -17,10 +17,8 @@ func _physics_process(_delta : float) -> void:
 func makepath() -> void:
 	nav.target_position = player.global_position
 
-
 func _on_timer_timeout():
 	makepath()
-
 
 func _on_ready():
 	nav = $NavigationAgent2D

@@ -16,10 +16,29 @@ func _physics_process(delta):
 		animation.scale.x = 7.516
 		if Input.is_action_pressed("ui_left"):
 			animation.scale.x = -7.516
-		animation.play("run")
+		#animation.play("run")
 	else:
 		animation.scale.x *= 1
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		#animation.play("idle")
+		
+	if Input.get_axis("ui_up", "ui_down"):
+		velocity.y = direction_down_up * SPEED
+		#animation.play("run")
+	else:
+		animation.scale.y *= 1
+		velocity.y = move_toward(velocity.y, 0, SPEED)
+		#animation.play("idle")
+		
+	if Input.is_action_pressed("ui_left"):
+		animation.play("run")
+	elif Input.is_action_pressed("ui_right"):
+		animation.play("run")
+	elif Input.is_action_pressed("ui_up"):
+		animation.play("run")
+	elif Input.is_action_pressed("ui_down"):
+		animation.play("run")
+	else:
 		animation.play("idle")
 	
 	move_and_slide()

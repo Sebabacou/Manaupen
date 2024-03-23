@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://xp0xq82lak0q"]
+[gd_scene load_steps=23 format=3 uid="uid://xp0xq82lak0q"]
 
 [ext_resource type="Texture2D" uid="uid://416qrfnn8ck7" path="res://Assets/Map/zelda_futuristic_asset_pack/map/tileset.png" id="2_f2pel"]
 [ext_resource type="PackedScene" uid="uid://dlgaubofwx2f6" path="res://player/player.tscn" id="2_xvqho"]
@@ -8,6 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://dgsp5rsty3r7k" path="res://Assets/Map/zelda_futuristic_asset_pack/fx/light_blue.png" id="6_j475w"]
 [ext_resource type="Texture2D" uid="uid://ciq3fhjg6ykyk" path="res://Assets/Map/zelda_futuristic_asset_pack/fx/light_red_v2.png" id="7_t0l8w"]
 [ext_resource type="Texture2D" uid="uid://ypknbtosda73" path="res://Assets/Map/zelda_futuristic_asset_pack/fx/light_blue_v2.png" id="8_3g21u"]
+[ext_resource type="Script" path="res://menu/StartDoor.gd" id="9_bd2vw"]
+[ext_resource type="Script" path="res://menu/ExitDoor.gd" id="10_pu83f"]
+[ext_resource type="Script" path="res://menu/OptionPannel.gd" id="11_8ghdp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6an7p"]
 texture = ExtResource("2_f2pel")
@@ -291,6 +294,15 @@ sources/4 = SubResource("TileSetAtlasSource_n3yom")
 sources/5 = SubResource("TileSetAtlasSource_iu136")
 sources/6 = SubResource("TileSetAtlasSource_6trp2")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_77hx1"]
+size = Vector2(39, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pr3pu"]
+size = Vector2(32, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s13kk"]
+size = Vector2(42, 4)
+
 [node name="MainMenu" type="Node2D"]
 
 [node name="Character" parent="." instance=ExtResource("2_xvqho")]
@@ -328,3 +340,28 @@ polygon = PackedVector2Array(-163, -128, -127, -129, -133, -150, -93, -150, -96,
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="TileMap/StaticBody2D"]
 polygon = PackedVector2Array(-27, -127, -26, -94, -6, -93, -2, -111, 37, -111, 40, -94, 59, -94, 59, -128)
+
+[node name="StartDoor" type="Area2D" parent="."]
+script = ExtResource("9_bd2vw")
+
+[node name="StartBox" type="CollisionShape2D" parent="StartDoor"]
+position = Vector2(142.5, -147.5)
+shape = SubResource("RectangleShape2D_77hx1")
+
+[node name="ExitDoor" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("10_pu83f")
+
+[node name="ExitBox" type="CollisionShape2D" parent="ExitDoor"]
+position = Vector2(-114, -150)
+shape = SubResource("RectangleShape2D_pr3pu")
+
+[node name="OptionPannel" type="Area2D" parent="."]
+script = ExtResource("11_8ghdp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OptionPannel"]
+position = Vector2(17, -109)
+shape = SubResource("RectangleShape2D_s13kk")
+
+[connection signal="body_entered" from="ExitDoor" to="ExitDoor" method="_on_body_entered"]

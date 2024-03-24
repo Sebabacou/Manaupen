@@ -51,7 +51,6 @@ func set_movement_target(player : Vector2):
 
 func _on_area_2d_body_entered(body):
 	if body.get_name() == "SpaceMan":
-		print("lalal")
 		player_present = true
 	if body.get_name() == "ball":
 		body.queue_free()

@@ -27,5 +27,4 @@ func _physics_process(delta):
 	
 
 func _on_area_2d_area_entered(area):
-	print("ls")
 	#pass # Replace with function body.

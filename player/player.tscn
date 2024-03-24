@@ -1,7 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://dlgaubofwx2f6"]
+[gd_scene load_steps=15 format=3 uid="uid://dlgaubofwx2f6"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_5batg"]
 [ext_resource type="Texture2D" uid="uid://jtjtwdcqybdu" path="res://player/Robot Warfare Asset Pack 22-11-24/Soldiers/Assault-Class.png" id="2_apjxy"]
+[ext_resource type="Script" path="res://player/Label.gd" id="3_s1j0f"]
+[ext_resource type="Script" path="res://player/Label2.gd" id="4_auiwq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4usxe"]
 size = Vector2(20, 7)
@@ -59,6 +61,15 @@ animations = [{
 "speed": 15.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_rcp5v"]
+radius = 14.0357
+
+[sub_resource type="LabelSettings" id="LabelSettings_hdnd7"]
+font_size = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_6dxtl"]
+font_size = 10
+
 [node name="Player" type="CharacterBody2D"]
 texture_filter = 1
 collision_layer = 4
@@ -83,3 +94,44 @@ rotation = 3.84845
 position = Vector2(-16.3961, 10.0583)
 scale = Vector2(1.5, 1.5)
 gizmo_extents = 45.7
+
+[node name="ChestInterraction" type="Node2D" parent="."]
+
+[node name="InterractionArea" type="Area2D" parent="ChestInterraction"]
+collision_layer = 0
+collision_mask = 32
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChestInterraction/InterractionArea"]
+shape = SubResource("CircleShape2D_rcp5v")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = -17.0
+offset_top = 14.0
+offset_right = 17.0
+offset_bottom = 28.0
+text = "Reload"
+label_settings = SubResource("LabelSettings_hdnd7")
+script = ExtResource("3_s1j0f")
+
+[node name="Label2" type="Label" parent="."]
+visible = false
+offset_left = -26.0
+offset_top = 11.0
+offset_right = 28.0
+offset_bottom = 25.0
+text = "Reloading.."
+label_settings = SubResource("LabelSettings_6dxtl")
+script = ExtResource("4_auiwq")
+
+[node name="rechargement" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="area_entered" from="ChestInterraction/InterractionArea" to="." method="_on_interraction_area_area_entered"]
+[connection signal="area_exited" from="ChestInterraction/InterractionArea" to="." method="_on_interraction_area_area_exited"]
+[connection signal="body_entered" from="ChestInterraction/InterractionArea" to="." method="_on_interraction_area_body_entered"]
+[connection signal="body_shape_entered" from="ChestInterraction/InterractionArea" to="." method="_on_interraction_area_body_shape_entered"]
+[connection signal="timeout" from="rechargement" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="rechargement" to="." method="_on_rechargement_timeout"]

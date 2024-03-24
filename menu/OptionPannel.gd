@@ -34,3 +34,13 @@ func _input(event):
 
 func _on_body_exited(body):
 	is_in = false
+
+func on_exit_button_pressed():
+	if paused:
+		f_key_pressed = false
+		handle_optionsMenu()
+
+func _on_options_menu_exit_options_menu():
+	pause_menu.hide()
+	Engine.time_scale = 1
+	f_key_pressed = false

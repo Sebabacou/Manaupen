@@ -443,6 +443,7 @@ autowrap_mode = 1
 stream = ExtResource("13_u0kga")
 autoplay = true
 
+[connection signal="exit_options_menu" from="Character/CharacterCamera/OptionsMenu" to="Map/OptionPannel" method="_on_options_menu_exit_options_menu"]
 [connection signal="body_entered" from="Map/StartDoor" to="Map/StartDoor" method="_on_body_entered"]
 [connection signal="body_entered" from="Map/ExitDoor" to="Map/ExitDoor" method="_on_body_entered"]
 [connection signal="body_entered" from="Map/OptionPannel" to="Map/OptionPannel" method="_on_body_entered"]

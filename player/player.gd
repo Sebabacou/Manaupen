@@ -4,6 +4,9 @@ const SPEED = 200.0
 const JUMP_VELOCITY = -400.0
 const run = 610
 
+@onready var chests = []
+var isInside = "false"
+
 @onready var animation = get_node("AnimatedSprite2D")
 const BulletPath = preload("res://interaction/ball.tscn")
 
@@ -51,6 +54,13 @@ func _physics_process(delta):
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and shoot_timer > shoot_delay:
 		shoot()
 		shoot_timer = 0
+	
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and shoot_timer > shoot_delay:
+		shoot()
+		shoot_timer = 0
+		
+	if Input.is_key_pressed(KEY_E) and isInside == "true":
+		chests[0].open();
 
 	move_and_slide()
 
@@ -62,3 +72,12 @@ func shoot():
 	get_parent().add_child(Bullet)
 
 const BALL_GROUP = "ball"
+
+
+func _on_interraction_area_area_entered(area):
+	chests.insert(0, area)
+	isInside = "true"
+	
+func _on_interraction_area_area_exited(area):
+	chests.erase(area)
+	isInside = "false"

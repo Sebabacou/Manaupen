@@ -1,0 +1,139 @@
+[gd_scene load_steps=18 format=3 uid="uid://c32f4k3hgfypv"]
+
+[ext_resource type="Script" path="res://ennemy/ennemy.gd" id="1_cwsr7"]
+[ext_resource type="Texture2D" uid="uid://b5woheac7bhtu" path="res://ennemy/Scarab.png" id="2_ja343"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wmuml"]
+atlas = ExtResource("2_ja343")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1q6la"]
+atlas = ExtResource("2_ja343")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8islm"]
+atlas = ExtResource("2_ja343")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l2p84"]
+atlas = ExtResource("2_ja343")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q0nm1"]
+atlas = ExtResource("2_ja343")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nbxvx"]
+atlas = ExtResource("2_ja343")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6s36s"]
+atlas = ExtResource("2_ja343")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50er2"]
+atlas = ExtResource("2_ja343")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1e1w8"]
+atlas = ExtResource("2_ja343")
+region = Rect2(16, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d0yog"]
+atlas = ExtResource("2_ja343")
+region = Rect2(32, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y785m"]
+atlas = ExtResource("2_ja343")
+region = Rect2(48, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlwmf"]
+atlas = ExtResource("2_ja343")
+region = Rect2(64, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pwt17"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wmuml")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1q6la")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8islm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l2p84")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q0nm1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nbxvx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6s36s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_50er2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1e1w8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d0yog")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y785m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qlwmf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pdhdm"]
+radius = 9.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7dpxb"]
+radius = 11.0454
+
+[node name="Ennemy" type="CharacterBody2D"]
+collision_layer = 8
+collision_mask = 10
+script = ExtResource("1_cwsr7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.8, 1.8)
+sprite_frames = SubResource("SpriteFrames_pwt17")
+frame_progress = 0.204573
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_pdhdm")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 150.0
+target_desired_distance = 150.0
+path_max_distance = 10000.0
+path_postprocessing = 1
+debug_enabled = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_7dpxb")
+
+[connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

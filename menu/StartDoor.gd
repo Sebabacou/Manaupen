@@ -7,4 +7,4 @@ func _on_body_entered(body):
 
 func _process(delta):
 	if is_in == true:
-		get_tree().change_scene_to_file("res://final_world.tscn")
+		get_tree().change_scene_to_file("res://world.tscn")

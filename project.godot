@@ -22,7 +22,7 @@ window/size/viewport_height=1080
 [file_customization]
 
 folder_colors={
-"res://ennemi/": "red",
+"res://ennemy/": "red",
 "res://interaction/": "purple",
 "res://interaction/interaction folder/": "purple",
 "res://map/": "orange",

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5woheac7bhtu"
-path="res://.godot/imported/Scarab.png-29fc20781881e8551c5b733e4acba067.ctex"
+uid="uid://domwagn0nq5uu"
+path="res://.godot/imported/pngwing.com.png-79b3e7fcaf883a3104f1de0280399073.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ennemi/Scarab.png"
-dest_files=["res://.godot/imported/Scarab.png-29fc20781881e8551c5b733e4acba067.ctex"]
+source_file="res://ennemy/pngwing.com.png"
+dest_files=["res://.godot/imported/pngwing.com.png-79b3e7fcaf883a3104f1de0280399073.ctex"]
 
 [params]
 

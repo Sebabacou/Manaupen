@@ -11,16 +11,21 @@ var isInside = "false"
 const BulletPath = preload("res://interaction/ball.tscn")
 
 var shoot_timer = 0.0
-var shoot_delay = 0.1
+var shoot_delay = 0.25
+
 var is_reloading : bool = false
 
+var attack_timer = 0.0
+var attack_delay = 2.0
 var chargeur_max = 15
 var chargeur = chargeur_max
 
 var enemy_in_range = false
 var enemy_attack_cd = true
-var health = 100
+var hp = 100
 var alive = true
+
+var player = null
 
 func _physics_process(delta):
 	var direction_right_left = Input.get_axis("move_left", "move_right")
@@ -60,15 +65,17 @@ func _physics_process(delta):
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and shoot_timer > shoot_delay:
 		shoot()
 		shoot_timer = 0
-	
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and shoot_timer > shoot_delay:
-		shoot()
-		shoot_timer = 0
-		
+
 	if Input.is_key_pressed(KEY_E) and isInside == "true":
 		chests[0].open();
 		shoot_delay -= 0.15
 	move_and_slide()
+
+func make_damage(degat: int = 5):
+	hp = hp - degat
+	if (hp <= 0):
+		get_tree().change_scene_to_file("res://player/death.tscn")
+
 
 func shoot():
 	if chargeur == 0:
@@ -79,8 +86,6 @@ func shoot():
 	if animation.scale.x == -2:
 			Bullet.position = get_global_position() + (Vector2.from_angle(rotation) * -15)
 	get_parent().add_child(Bullet)
-	if (chargeur == 0):
-		$Label.setVisibilityTrue()
 
 @onready var timer : Timer =  $rechargement
 func reload():
@@ -91,7 +96,7 @@ func reload():
 	$Label2.setVisibilityTrue()
 	timer.start()
 	print(timer.is_stopped())
-	
+
 const BALL_GROUP = "ball"
 
 
@@ -99,7 +104,7 @@ const BALL_GROUP = "ball"
 func _on_interraction_area_area_entered(area):
 	chests.insert(0, area)
 	isInside = "true"
-	
+
 func _on_interraction_area_area_exited(area):
 	chests.erase(area)
 	isInside = "false"

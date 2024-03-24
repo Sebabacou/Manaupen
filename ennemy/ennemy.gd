@@ -34,3 +34,4 @@ func actor_setup():
 
 func set_movement_target(player : Vector2):
 	nav.target_position = player
+

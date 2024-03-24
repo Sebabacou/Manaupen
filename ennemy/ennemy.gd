@@ -13,7 +13,7 @@ func _physics_process(_delta : float) -> void:
 	velo = velo.normalized()
 	velocity = velo * speed
 	move_and_slide()
-	
+
 func makepath() -> void:
 	nav.target_position = player.global_position
 
@@ -34,4 +34,5 @@ func actor_setup():
 
 func set_movement_target(player : Vector2):
 	nav.target_position = player
+	
 

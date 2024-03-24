@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://xp0xq82lak0q"]
+[gd_scene load_steps=27 format=3 uid="uid://xp0xq82lak0q"]
 
 [ext_resource type="Texture2D" uid="uid://416qrfnn8ck7" path="res://Assets/Map/zelda_futuristic_asset_pack/map/tileset.png" id="2_f2pel"]
 [ext_resource type="PackedScene" uid="uid://dlgaubofwx2f6" path="res://player/player.tscn" id="2_xvqho"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ciq3fhjg6ykyk" path="res://Assets/Map/zelda_futuristic_asset_pack/fx/light_red_v2.png" id="7_t0l8w"]
 [ext_resource type="Texture2D" uid="uid://ypknbtosda73" path="res://Assets/Map/zelda_futuristic_asset_pack/fx/light_blue_v2.png" id="8_3g21u"]
 [ext_resource type="Script" path="res://menu/StartDoor.gd" id="9_bd2vw"]
+[ext_resource type="Script" path="res://menu/MapHitBoxes.gd" id="9_hn1v2"]
 [ext_resource type="Script" path="res://menu/ExitDoor.gd" id="10_pu83f"]
 [ext_resource type="FontFile" uid="uid://de33bafuqfbcr" path="res://Assets/TextFont/m3x6.ttf" id="10_ux386"]
 [ext_resource type="Script" path="res://menu/OptionPannel.gd" id="11_8ghdp"]
@@ -339,6 +340,7 @@ layer_3/tile_data = PackedInt32Array(-327677, 1, 0, -327675, 131073, 0, -327676,
 [node name="MapHitBoxes" type="StaticBody2D" parent="Map"]
 collision_layer = 2
 collision_mask = 12
+script = ExtResource("9_hn1v2")
 
 [node name="Walls" type="CollisionPolygon2D" parent="Map/MapHitBoxes"]
 polygon = PackedVector2Array(-163, -128, -127, -129, -133, -150, -93, -150, -96, -128, -38.9752, -128.511, 127, -130, 122, -150, 161, -152, 161, -131, 193, -130, 193, 160, -161, 160, -161, -121, -196, -164, -198, 194, 242, 197, 235, -170, -194, -165, -164, -125)

@@ -22,8 +22,10 @@ func _physics_process(delta):
 		rotation_degrees = angle_degrees
 	var colide_info = move_and_collide(vel.normalized() * delta * speed)
 	
-
+	if move_and_collide(vel.normalized() * delta * speed):
+		queue_free()
+	
 
 func _on_area_2d_area_entered(area):
 	print("ls")
-	pass # Replace with function body.
+	#pass # Replace with function body.

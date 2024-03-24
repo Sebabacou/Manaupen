@@ -72,6 +72,7 @@ func _physics_process(delta):
 	move_and_slide()
 
 func make_damage(degat: int = 5):
+	print("ici")
 	hp = hp - degat
 	if (hp <= 0):
 		get_tree().change_scene_to_file("res://player/death.tscn")
@@ -97,6 +98,7 @@ func reload():
 	is_reloading = true
 	$Label2.setVisibilityTrue()
 	timer.start()
+	print(timer.is_stopped())
 
 const BALL_GROUP = "ball"
 

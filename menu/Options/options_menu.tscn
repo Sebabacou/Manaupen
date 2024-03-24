@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://xv6iws8v6etk"]
+[gd_scene load_steps=4 format=3 uid="uid://xv6iws8v6etk"]
 
 [ext_resource type="Script" path="res://menu/Options/options_menu.gd" id="1_334i6"]
 [ext_resource type="FontFile" uid="uid://de33bafuqfbcr" path="res://Assets/TextFont/m3x6.ttf" id="1_hddb8"]
+[ext_resource type="PackedScene" uid="uid://c23ek6y6swi1v" path="res://menu/Options/options_tab.tscn" id="3_qiq3q"]
 
 [node name="OptionsMenu" type="Control"]
 layout_mode = 3
@@ -36,7 +37,11 @@ text = "OPTIONS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="OptionsTab" parent="MarginContainer/VBoxContainer" instance=ExtResource("3_qiq3q")]
+layout_mode = 2
+size_flags_vertical = 3
+
 [node name="ExitButton" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 10
+size_flags_vertical = 8
 text = "EXIT"

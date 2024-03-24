@@ -16,6 +16,8 @@ const Bullet = preload("res://interaction/ball.tscn")
 var player_present : bool = false
 
 func _physics_process(_delta : float) -> void:
+	if global_position == null || player == null:
+		return
 	var velo = player.global_position - global_position
 	velo = velo.normalized()
 	velocity = velo * speed
@@ -25,7 +27,8 @@ func _physics_process(_delta : float) -> void:
 	move_and_slide()
 
 func makepath() -> void:
-	nav.target_position = player.global_position
+	if player:
+		nav.target_position = player.global_position
 
 func _on_timer_timeout():
 	makepath()
@@ -40,7 +43,8 @@ func _on_ready():
 	
 func actor_setup():
 	await get_tree().physics_frame
-	set_movement_target(player.global_position)
+	if player:
+		set_movement_target(player.global_position)
 
 func set_movement_target(player : Vector2):
 	nav.target_position = player
@@ -54,7 +58,15 @@ func _on_area_2d_body_entered(body):
 		if life <= 0:
 			queue_free()
 
-
 func _on_area_2d_body_exited(body):
 	if body.get_name() == "SpaceMan":
 		player_present = false
+		
+func set_player(entity):
+	player = entity
+	
+	
+	
+	
+	
+	

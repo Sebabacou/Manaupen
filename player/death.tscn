@@ -6,10 +6,17 @@ font_size = 100
 [node name="death" type="Node2D"]
 
 [node name="Label" type="Label" parent="."]
-offset_left = 613.0
-offset_top = 471.5
-offset_right = 1307.0
-offset_bottom = 608.5
-pivot_offset = Vector2(347, 68.5)
-text = "Your are loose"
+offset_left = 756.0
+offset_top = 190.0
+offset_right = 1204.0
+offset_bottom = 327.0
+pivot_offset = Vector2(224, 68.5)
+text = "Your lose"
 label_settings = SubResource("LabelSettings_ic4al")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 728.0
+offset_top = 435.0
+offset_right = 1192.0
+offset_bottom = 558.0
+text = "Replay"

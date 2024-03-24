@@ -64,8 +64,8 @@ func make_damage(degat: int = 5):
 	if (hp <= 0):
 		get_tree().change_scene_to_file("res://player/death.tscn")
 
-
 func shoot():
+	print("nique ta mère")
 	var Bullet = BulletPath.instantiate()
 	Bullet.position = get_global_position() + (Vector2.from_angle(rotation) * 15)
 	if animation.scale.x == -2:

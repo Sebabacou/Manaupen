@@ -1,4 +1,3 @@
-[gd_scene load_steps=11 format=3 uid="uid://dlgaubofwx2f6"]
 
 [gd_scene load_steps=14 format=3 uid="uid://dlgaubofwx2f6"]
 
@@ -6,6 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://jtjtwdcqybdu" path="res://player/Robot Warfare Asset Pack 22-11-24/Soldiers/Assault-Class.png" id="2_apjxy"]
 [ext_resource type="Script" path="res://player/Label.gd" id="3_s1j0f"]
 [ext_resource type="Script" path="res://player/Label2.gd" id="4_auiwq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4usxe"]
+size = Vector2(20, 7)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hm5qv"]
 atlas = ExtResource("2_apjxy")
@@ -60,11 +62,6 @@ animations = [{
 "speed": 15.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4usxe"]
-size = Vector2(5, 3.5)
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8jx8s"]
-height = 22.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rcp5v"]
 radius = 14.0357
@@ -80,15 +77,16 @@ collision_layer = 4
 collision_mask = 10
 script = ExtResource("1_5batg")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6.5)
+shape = SubResource("RectangleShape2D_4usxe")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(-4.76837e-07, -4.76837e-07)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_rttob")
 animation = &"idle"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_4usxe")
 
 [node name="Node2D" type="Node2D" parent="."]
 rotation = 3.84845
@@ -98,15 +96,6 @@ position = Vector2(-16.3961, 10.0583)
 scale = Vector2(1.5, 1.5)
 gizmo_extents = 45.7
 
-[node name="Area2D" type="Area2D" parent="."]
-collision_layer = 4
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CapsuleShape2D_8jx8s")
-
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
 
 [node name="ChestInterraction" type="Node2D" parent="."]
 

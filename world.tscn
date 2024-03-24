@@ -2610,3 +2610,15 @@ player = NodePath("../SpaceMan")
 [node name="Chest" parent="." instance=ExtResource("14_fnp8m")]
 position = Vector2(-91, 115.25)
 scale = Vector2(1.125, 1.01563)
+
+[node name="Chest2" parent="." instance=ExtResource("14_fnp8m")]
+position = Vector2(-684, 384)
+scale = Vector2(1.125, 1.01563)
+
+[node name="Chest3" parent="." instance=ExtResource("14_fnp8m")]
+position = Vector2(369, 465)
+scale = Vector2(1.125, 1.01563)
+
+[node name="Chest" parent="Chest3" instance=ExtResource("14_fnp8m")]
+position = Vector2(-1032.89, -739.446)
+scale = Vector2(1.125, 1.01563)

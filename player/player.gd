@@ -61,6 +61,7 @@ func _physics_process(delta):
 		
 	if Input.is_key_pressed(KEY_E) and isInside == "true":
 		chests[0].open();
+		shoot_delay -= 0.15
 
 	move_and_slide()
 

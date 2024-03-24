@@ -102,6 +102,7 @@ radius = 9.0
 radius = 11.0454
 
 [node name="Ennemy" type="CharacterBody2D"]
+texture_filter = 1
 collision_layer = 8
 collision_mask = 10
 script = ExtResource("1_cwsr7")

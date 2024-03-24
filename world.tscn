@@ -1,5 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dyd7hgi5inauq"]
-[gd_scene load_steps=31 format=3 uid="uid://dyd7hgi5inauq"]
+[gd_scene load_steps=32 format=3 uid="uid://dyd7hgi5inauq"]
 
 [ext_resource type="Texture2D" uid="uid://br2or78kyu8e0" path="res://map/obstacles-and-objects.png" id="1_x3xuc"]
 [ext_resource type="Texture2D" uid="uid://b4wi7htkmmkp8" path="res://map/tileset_arranged.png" id="2_62881"]
@@ -14,9 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://ds3uumatsrgs1" path="res://map/base.png" id="9_ovq5y"]
 [ext_resource type="Texture2D" uid="uid://e6v6xi7n033c" path="res://player/hand-drawn-video-game-element/life_bar_empty.png" id="11_01dyf"]
 [ext_resource type="Texture2D" uid="uid://bi4br1iuaj7g8" path="res://player/hand-drawn-video-game-element/life_bar_filled.png" id="12_r4wdc"]
-[ext_resource type="PackedScene" uid="uid://cumgkscs10x1h" path="res://ChestInteraction/chest.tscn" id="14_fnp8m"]
 [ext_resource type="AudioStream" uid="uid://b6sjseluvwl1x" path="res://Assets/Musics/Ambient/[NO COPYRIGHT]Ambient-SciFi.mp3" id="14_ffjg6"]
-[ext_resource type="AudioStream" uid="uid://b1qics0mehwnj" path="res://Assets/Musics/Battle/[NO COPYRIGHT]Epic-battle.mp3" id="14_tymfm"]
+[ext_resource type="PackedScene" uid="uid://cumgkscs10x1h" path="res://ChestInteraction/chest.tscn" id="14_fnp8m"]
 
 [sub_resource type="GDScript" id="GDScript_1smhk"]
 
@@ -2610,7 +2608,6 @@ player = NodePath("../SpaceMan")
 position = Vector2(788, -87)
 player = NodePath("../SpaceMan")
 
-
 [node name="Chest" parent="." instance=ExtResource("14_fnp8m")]
 position = Vector2(-91, 115.25)
 scale = Vector2(1.125, 1.01563)
@@ -2658,9 +2655,3 @@ player = NodePath("../SpaceMan")
 [node name="Ennemy10" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_38ntu")]
 position = Vector2(-1417, 777)
 player = NodePath("../SpaceMan")
-
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("14_tymfm")
-volume_db = -20.0
-autoplay = true

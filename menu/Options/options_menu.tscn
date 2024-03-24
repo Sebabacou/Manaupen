@@ -43,5 +43,6 @@ size_flags_vertical = 3
 
 [node name="ExitButton" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 8
 text = "EXIT"

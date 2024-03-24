@@ -12,6 +12,10 @@ const BulletPath = preload("res://interaction/ball.tscn")
 
 var shoot_timer = 0.0
 var shoot_delay = 0.1
+var is_reloading : bool = false
+
+var chargeur_max = 15
+var chargeur = chargeur_max
 
 var enemy_in_range = false
 var enemy_attack_cd = true
@@ -38,6 +42,8 @@ func _physics_process(delta):
 		animation.scale.y *= 1
 		velocity.y = move_toward(velocity.y, 0, 30)
 		
+	if Input.is_key_pressed(KEY_R):
+		reload()
 	if Input.is_action_pressed("move_left"):
 		animation.play("run")
 	elif Input.is_action_pressed("move_right"):
@@ -62,17 +68,32 @@ func _physics_process(delta):
 	if Input.is_key_pressed(KEY_E) and isInside == "true":
 		chests[0].open();
 		shoot_delay -= 0.15
-
 	move_and_slide()
 
 func shoot():
+	if chargeur == 0:
+		return
+	chargeur -= 1
 	var Bullet = BulletPath.instantiate()
 	Bullet.position = get_global_position() + (Vector2.from_angle(rotation) * 15)
 	if animation.scale.x == -2:
 			Bullet.position = get_global_position() + (Vector2.from_angle(rotation) * -15)
 	get_parent().add_child(Bullet)
+	if (chargeur == 0):
+		$Label.setVisibilityTrue()
 
+@onready var timer : Timer =  $rechargement
+func reload():
+	if (is_reloading):
+		return
+	$Label.setVisibilityFalse()
+	is_reloading = true
+	$Label2.setVisibilityTrue()
+	timer.start()
+	print(timer.is_stopped())
+	
 const BALL_GROUP = "ball"
+
 
 
 func _on_interraction_area_area_entered(area):
@@ -82,3 +103,10 @@ func _on_interraction_area_area_entered(area):
 func _on_interraction_area_area_exited(area):
 	chests.erase(area)
 	isInside = "false"
+
+
+func _on_rechargement_timeout():
+	chargeur = chargeur_max
+	print("la")
+	is_reloading = false
+	$Label2.setVisibilityFalse()

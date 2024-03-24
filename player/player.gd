@@ -11,16 +11,23 @@ var isInside = "false"
 const BulletPath = preload("res://interaction/ball.tscn")
 
 var shoot_timer = 0.0
+var shoot_delay = 0.25
+
+var attack_timer = 0.0
+var attack_delay = 2.0
 var shoot_delay = 0.1
 var is_reloading : bool = false
 
 var chargeur_max = 15
 var chargeur = chargeur_max
 
+
 var enemy_in_range = false
 var enemy_attack_cd = true
-var health = 100
+var hp = 100
 var alive = true
+
+var player = null
 
 func _physics_process(delta):
 	var direction_right_left = Input.get_axis("move_left", "move_right")
@@ -69,6 +76,12 @@ func _physics_process(delta):
 		chests[0].open();
 		shoot_delay -= 0.15
 	move_and_slide()
+
+func make_damage(degat: int = 5):
+	hp = hp - degat
+	if (hp <= 0):
+		get_tree().change_scene_to_file("res://player/death.tscn")
+
 
 func shoot():
 	if chargeur == 0:

@@ -106,6 +106,7 @@ texture_filter = 1
 collision_layer = 8
 collision_mask = 10
 script = ExtResource("1_cwsr7")
+metadata/enemy = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.8, 1.8)
@@ -129,12 +130,17 @@ autostart = true
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 8
-collision_mask = 16
+collision_mask = 20
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_7dpxb")
 
+[node name="degat" type="Timer" parent="."]
+wait_time = 0.75
+one_shot = true
+
 [connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

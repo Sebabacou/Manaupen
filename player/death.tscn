@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://drgiajiw2dx3b"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ic4al"]
+font_size = 100
+
+[node name="death" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 613.0
+offset_top = 471.5
+offset_right = 1307.0
+offset_bottom = 608.5
+pivot_offset = Vector2(347, 68.5)
+text = "Your are loose"
+label_settings = SubResource("LabelSettings_ic4al")

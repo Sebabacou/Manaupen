@@ -72,6 +72,7 @@ func _physics_process(delta):
 	move_and_slide()
 
 func make_damage(degat: int = 5):
+	print("ici")
 	hp = hp - degat
 	if (hp <= 0):
 		get_tree().change_scene_to_file("res://player/death.tscn")
@@ -86,6 +87,8 @@ func shoot():
 	if animation.scale.x == -2:
 			Bullet.position = get_global_position() + (Vector2.from_angle(rotation) * -15)
 	get_parent().add_child(Bullet)
+	if chargeur == 0:
+		$Label.setVisibilityTrue()
 
 @onready var timer : Timer =  $rechargement
 func reload():
@@ -112,6 +115,5 @@ func _on_interraction_area_area_exited(area):
 
 func _on_rechargement_timeout():
 	chargeur = chargeur_max
-	print("la")
 	is_reloading = false
 	$Label2.setVisibilityFalse()

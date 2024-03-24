@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://dyd7hgi5inauq"]
+[gd_scene load_steps=35 format=3 uid="uid://dyd7hgi5inauq"]
 
 [ext_resource type="Texture2D" uid="uid://br2or78kyu8e0" path="res://map/obstacles-and-objects.png" id="1_x3xuc"]
 [ext_resource type="Texture2D" uid="uid://b4wi7htkmmkp8" path="res://map/tileset_arranged.png" id="2_62881"]
@@ -15,9 +15,10 @@
 [ext_resource type="Texture2D" uid="uid://bi4br1iuaj7g8" path="res://player/hand-drawn-video-game-element/life_bar_filled.png" id="12_r4wdc"]
 [ext_resource type="Script" path="res://lifebar.gd" id="13_15bc8"]
 [ext_resource type="Script" path="res://create_ennemy.gd" id="14_03h8w"]
-[ext_resource type="Script" path="res://Node2D.gd" id="16_fwngc"]
-[ext_resource type="PackedScene" uid="uid://cumgkscs10x1h" path="res://ChestInteraction/chest.tscn" id="14_fnp8m"]
 [ext_resource type="AudioStream" uid="uid://b6sjseluvwl1x" path="res://Assets/Musics/Ambient/[NO COPYRIGHT]Ambient-SciFi.mp3" id="14_ffjg6"]
+[ext_resource type="PackedScene" uid="uid://cumgkscs10x1h" path="res://ChestInteraction/chest.tscn" id="14_fnp8m"]
+[ext_resource type="Script" path="res://Node2D.gd" id="16_fwngc"]
+
 [sub_resource type="GDScript" id="GDScript_1smhk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_310u6"]
@@ -2627,7 +2628,6 @@ player = NodePath("../SpaceMan")
 position = Vector2(1143, -55)
 player = NodePath("../SpaceMan")
 
-
 [node name="Chest" parent="." instance=ExtResource("14_fnp8m")]
 position = Vector2(-91, 115.25)
 scale = Vector2(1.125, 1.01563)
@@ -2648,31 +2648,31 @@ scale = Vector2(1.125, 1.01563)
 stream = ExtResource("14_ffjg6")
 autoplay = true
 
-[node name="Ennemy4" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_38ntu")]
+[node name="Ennemy7" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_38ntu")]
 position = Vector2(517, 119)
 player = NodePath("../SpaceMan")
 
-[node name="Ennemy5" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_38ntu")]
+[node name="Ennemy8" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_38ntu")]
 position = Vector2(-1312, 315)
 player = NodePath("../SpaceMan")
 
-[node name="Ennemy6" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_38ntu")]
+[node name="Ennemy9" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_38ntu")]
 position = Vector2(615, -65)
 player = NodePath("../SpaceMan")
 
-[node name="Ennemy7" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_38ntu")]
+[node name="Ennemy10" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_38ntu")]
 position = Vector2(1235, 213)
 player = NodePath("../SpaceMan")
 
-[node name="Ennemy8" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_38ntu")]
+[node name="Ennemy11" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_38ntu")]
 position = Vector2(717, -235)
 player = NodePath("../SpaceMan")
 
-[node name="Ennemy9" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_38ntu")]
+[node name="Ennemy12" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_38ntu")]
 position = Vector2(-365, 129)
 player = NodePath("../SpaceMan")
 
-[node name="Ennemy10" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_38ntu")]
+[node name="Ennemy13" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_38ntu")]
 position = Vector2(-1417, 777)
 player = NodePath("../SpaceMan")
 

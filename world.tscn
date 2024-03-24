@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dyd7hgi5inauq"]
+[gd_scene load_steps=35 format=3 uid="uid://dyd7hgi5inauq"]
 
 [ext_resource type="Texture2D" uid="uid://br2or78kyu8e0" path="res://map/obstacles-and-objects.png" id="1_x3xuc"]
 [ext_resource type="Texture2D" uid="uid://b4wi7htkmmkp8" path="res://map/tileset_arranged.png" id="2_62881"]
@@ -13,8 +13,11 @@
 [ext_resource type="Texture2D" uid="uid://ds3uumatsrgs1" path="res://map/base.png" id="9_ovq5y"]
 [ext_resource type="Texture2D" uid="uid://e6v6xi7n033c" path="res://player/hand-drawn-video-game-element/life_bar_empty.png" id="11_01dyf"]
 [ext_resource type="Texture2D" uid="uid://bi4br1iuaj7g8" path="res://player/hand-drawn-video-game-element/life_bar_filled.png" id="12_r4wdc"]
+[ext_resource type="Script" path="res://lifebar.gd" id="13_15bc8"]
+[ext_resource type="Script" path="res://create_ennemy.gd" id="14_03h8w"]
 [ext_resource type="AudioStream" uid="uid://b6sjseluvwl1x" path="res://Assets/Musics/Ambient/[NO COPYRIGHT]Ambient-SciFi.mp3" id="14_ffjg6"]
 [ext_resource type="PackedScene" uid="uid://cumgkscs10x1h" path="res://ChestInteraction/chest.tscn" id="14_fnp8m"]
+[ext_resource type="Script" path="res://Node2D.gd" id="16_fwngc"]
 
 [sub_resource type="GDScript" id="GDScript_1smhk"]
 
@@ -2575,7 +2578,7 @@ shape = SubResource("RectangleShape2D_3xp24")
 position = Vector2(848, 64)
 collision_mask = 6
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="SpaceMan"]
+[node name="lifebar" type="TextureProgressBar" parent="SpaceMan"]
 offset_left = -46.0
 offset_top = -63.0
 offset_right = 50.0
@@ -2583,6 +2586,7 @@ offset_bottom = -23.0
 value = 50.0
 texture_under = ExtResource("11_01dyf")
 texture_progress = ExtResource("12_r4wdc")
+script = ExtResource("13_15bc8")
 metadata/_edit_use_anchors_ = true
 
 [node name="Camera2D2" type="Camera2D" parent="SpaceMan"]
@@ -2596,16 +2600,32 @@ limit_bottom = 1039
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
+[node name="create_ennemy" type="Timer" parent="."]
+autostart = true
+script = ExtResource("14_03h8w")
+
 [node name="Ennemy" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_38ntu")]
-position = Vector2(795, 205)
+position = Vector2(833, 137)
 player = NodePath("../SpaceMan")
 
 [node name="Ennemy2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_38ntu")]
-position = Vector2(1037, 42)
+position = Vector2(674, 153)
 player = NodePath("../SpaceMan")
 
 [node name="Ennemy3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_38ntu")]
-position = Vector2(788, -87)
+position = Vector2(389, 86)
+player = NodePath("../SpaceMan")
+
+[node name="Ennemy4" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_38ntu")]
+position = Vector2(565, -7)
+player = NodePath("../SpaceMan")
+
+[node name="Ennemy5" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_38ntu")]
+position = Vector2(1170, 130)
+player = NodePath("../SpaceMan")
+
+[node name="Ennemy6" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_38ntu")]
+position = Vector2(1143, -55)
 player = NodePath("../SpaceMan")
 
 [node name="Chest" parent="." instance=ExtResource("14_fnp8m")]
@@ -2628,30 +2648,36 @@ scale = Vector2(1.125, 1.01563)
 stream = ExtResource("14_ffjg6")
 autoplay = true
 
-[node name="Ennemy4" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_38ntu")]
+[node name="Ennemy7" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_38ntu")]
 position = Vector2(517, 119)
 player = NodePath("../SpaceMan")
 
-[node name="Ennemy5" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_38ntu")]
+[node name="Ennemy8" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_38ntu")]
 position = Vector2(-1312, 315)
 player = NodePath("../SpaceMan")
 
-[node name="Ennemy6" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_38ntu")]
+[node name="Ennemy9" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_38ntu")]
 position = Vector2(615, -65)
 player = NodePath("../SpaceMan")
 
-[node name="Ennemy7" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_38ntu")]
+[node name="Ennemy10" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_38ntu")]
 position = Vector2(1235, 213)
 player = NodePath("../SpaceMan")
 
-[node name="Ennemy8" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_38ntu")]
+[node name="Ennemy11" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_38ntu")]
 position = Vector2(717, -235)
 player = NodePath("../SpaceMan")
 
-[node name="Ennemy9" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_38ntu")]
+[node name="Ennemy12" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_38ntu")]
 position = Vector2(-365, 129)
 player = NodePath("../SpaceMan")
 
-[node name="Ennemy10" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_38ntu")]
+[node name="Ennemy13" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_38ntu")]
 position = Vector2(-1417, 777)
 player = NodePath("../SpaceMan")
+
+[node name="Node2D" type="Node2D" parent="." node_paths=PackedStringArray("player")]
+script = ExtResource("16_fwngc")
+player = NodePath("../SpaceMan")
+
+[connection signal="timeout" from="create_ennemy" to="create_ennemy" method="_on_timeout"]

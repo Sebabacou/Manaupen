@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://ds3uumatsrgs1" path="res://map/base.png" id="9_ovq5y"]
 [ext_resource type="Texture2D" uid="uid://e6v6xi7n033c" path="res://player/hand-drawn-video-game-element/life_bar_empty.png" id="11_01dyf"]
 [ext_resource type="Texture2D" uid="uid://bi4br1iuaj7g8" path="res://player/hand-drawn-video-game-element/life_bar_filled.png" id="12_r4wdc"]
+[ext_resource type="PackedScene" uid="uid://cumgkscs10x1h" path="res://ChestInteraction/chest.tscn" id="14_fnp8m"]
 [ext_resource type="AudioStream" uid="uid://b6sjseluvwl1x" path="res://Assets/Musics/Ambient/[NO COPYRIGHT]Ambient-SciFi.mp3" id="14_ffjg6"]
 
 [sub_resource type="GDScript" id="GDScript_1smhk"]
@@ -2607,6 +2608,23 @@ player = NodePath("../SpaceMan")
 position = Vector2(788, -87)
 player = NodePath("../SpaceMan")
 
+
+[node name="Chest" parent="." instance=ExtResource("14_fnp8m")]
+position = Vector2(-91, 115.25)
+scale = Vector2(1.125, 1.01563)
+
+[node name="Chest2" parent="." instance=ExtResource("14_fnp8m")]
+position = Vector2(-684, 384)
+scale = Vector2(1.125, 1.01563)
+
+[node name="Chest3" parent="." instance=ExtResource("14_fnp8m")]
+position = Vector2(369, 465)
+scale = Vector2(1.125, 1.01563)
+
+[node name="Chest" parent="Chest3" instance=ExtResource("14_fnp8m")]
+position = Vector2(-1032.89, -739.446)
+scale = Vector2(1.125, 1.01563)
+
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_ffjg6")
 autoplay = true
@@ -2638,3 +2656,4 @@ player = NodePath("../SpaceMan")
 [node name="Ennemy10" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_38ntu")]
 position = Vector2(-1417, 777)
 player = NodePath("../SpaceMan")
+
